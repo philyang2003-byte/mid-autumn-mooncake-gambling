@@ -1,0 +1,57 @@
+:root {
+  --ink-0: #07090f;
+  --ink-1: #0b1222;
+  --ink-2: #121b33;
+  --ink-3: #1a2442;
+  --gold-1: #e8c26a;
+  --gold-2: #d4a84b;
+  --gold-3: #9c7a2e;
+  --red-1: #e23a3f;
+  --red-2: #c8282c;
+  --red-3: #8e1a1e;
+  --red-4: #5a0f12;
+  --orange: #e8823a;
+  --cream: #f5e7c8;
+  --paper: #efe3c3;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #07090f;
+  color: var(--cream);
+  font-family: "Noto Sans SC", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(60, 80, 130, .25), transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(130, 50, 40, .18), transparent 55%),
+    radial-gradient(ellipse at 50% 40%, #13213f 0%, #0a1024 45%, #07090f 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.015) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(45deg, rgba(0,0,0,.03) 0 1px, transparent 1px 2px);
+  mix-blend-mode: overlay;
+}
+
+#root { position: relative; z-index: 2; }
+
+button { cursor: pointer; }
+input { font-family: inherit; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
